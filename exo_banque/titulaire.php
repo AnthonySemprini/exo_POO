@@ -4,19 +4,19 @@ class Titulaire {
 
     private string $_nom;
     private string $_prenom;
-    private string $_dateNaissance;
+    private datetime $_dateNaissance;
     private string $_ville;
     private string $_compte;
 
 
+        //__construct
 
-
-    public function __construct($_nom , $_prenom , $_dateNaissance , $_ville , $_compte){
+    public function __construct($_nom , $_prenom , $_ville , $_dateNaissance, $_compte){
 
         
         $this->_nom = $_nom;
         $this->_prenom = $_prenom;
-        $this->_dateNaissance = $_dateNaissance;
+        $this->_dateNaissance = new datetime ($_dateNaissance);
         $this->_ville = $_ville;
         $this->_compte = $_compte;
     }
@@ -28,9 +28,9 @@ class Titulaire {
     public function getprenom(){
         return  $this->_prenom;  
     } 
-    public function getDateNaissance(){
+    public function getAge(){
         return  $this->_dateNaissance;  
-    } 
+    }
     public function getVille(){
         return  $this->_ville;  
     }
@@ -46,8 +46,8 @@ class Titulaire {
     public function setprenom(){
         $this->_prenom;
     }
-    public function setDateNaissance(){
-        $this->_dateNaissance;
+    public function setDateNaissance($newDateNaissance){
+        $this->_dateNaissance = $newDateNaissance;
     }
     public function setVille(){
         $this->_ville;
@@ -55,4 +55,34 @@ class Titulaire {
     public function setCompte(){
         $this->_compte;
     }
+
+        //function
+
+    public function ageReel() { //pour calcul l'age
+        $currentDate= new DateTime();
+        $result = $this->_dateNaissance->diff($currentDate);
+        return $result->format ('%Y ans');
+    }
+    public function getInfos()
+    {
+        $result = "infos titulaire du compte<br>".
+                  "**********************<br>". 
+
+                  "Nom et prénom : " . $this->_nom ." ".$this->_prenom . "<br>".
+
+                  "Ville ou il habite :".$this->_ville."<br>".
+
+                 "Age : " . $this->ageReel(). "<br>".
+
+                  "Ensemble des comptes : " .$this->_compte . "<br>";
+        return $result;
+    }
+    
 }
+
+
+$tit1 = new Titulaire ("SEMPRINI" , "Anthony" , "Strasbourg" ,"1986-01-27","livret A");
+$Thi2 = new Titulaire ("LEGRAND","Pierre","Geudertheim","1995-03-02","P.E.L.");
+$tit3 = new Titulaire ("MULLER","Marie","Molsheim","2000-06-12","Compte courant");
+
+echo$tit1->getInfos();
