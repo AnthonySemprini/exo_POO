@@ -54,16 +54,16 @@ class Compte {
     }
     public function crediter(float $crediter){
         $this->_soldeInitial += $crediter;
-        echo "le compte de " . $this->_titulaire . $this->_libelle." :" . $this->_soldeInitial . "€<br>";
+        echo "le compte de " . $this->_titulaire. " " . $this->_libelle." :" . $this->_soldeInitial . "€<br>";
     }
     public function debiter(float $debiter){
         $this->_soldeInitial -= $debiter;
-        echo "le compte de ". $this->_titulaire . $this->_libelle." :". $this->_soldeInitial . "€<br>";
+        echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€<br>";
     }
 
 }
 
-$cp1 = new Compte ("livretA" , 100 , "€" , "Anthony" , 0);
+$cp1 = new Compte ("livretA" , 100 , "€" , "Anthony SEMPRINI" , 0);
 
 $cp1->crediter(200);
 $cp1->debiter(30);
