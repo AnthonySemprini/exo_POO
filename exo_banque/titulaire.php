@@ -56,6 +56,15 @@ class Titulaire {
         $this->_comptes;
     }
 
+    function afficherComptes(){
+        $result = "Tableau de Comptes";
+        foreach ($this->_comptes as $compte) {
+            $result .= $compte;
+        }
+
+        return $result;
+    }
+
         //function
 
     public function ageReel() { //pour calcul l'age
@@ -74,7 +83,7 @@ class Titulaire {
 
                  "Age : " . $this->ageReel(). "<br>".
 
-                  "Ensemble des comptes : " . $this->_comptes . "<br>";
+                  "Ensemble des comptes : " . $this->afficherComptes() . "<br>";
         return $result;
     }
     

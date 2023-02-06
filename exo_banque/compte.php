@@ -62,7 +62,18 @@ class Compte {
         $this->_soldeInitial -= $debiter;
         echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€<br>";
     }
+    public function virement(float $virement){
+        $this->_soldeInitial += $virement;
+        echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€<br>";
+    }
 
+
+
+    public function __toString() {
+        $result = $this->_libelle . " " . $this->_soldeInitial . " " . $this->_devise. "<br>";    
+        return $result;
+    }
+    
 }
 
 // $cp1 = new Compte ("livretA" , 100 , "€" , "Anthony SEMPRINI" , 0);
