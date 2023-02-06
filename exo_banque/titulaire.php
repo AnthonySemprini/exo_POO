@@ -6,19 +6,19 @@ class Titulaire {
     private string $_prenom;
     private datetime $_dateNaissance;
     private string $_ville;
-    private string $_compte;
+    public array $_comptes;
 
 
         //__construct
 
-    public function __construct($_nom , $_prenom , $_ville , $_dateNaissance, $_compte){
+    public function __construct(string $_nom , string $_prenom , string $_ville ,string $_dateNaissance){
 
         
         $this->_nom = $_nom;
         $this->_prenom = $_prenom;
         $this->_dateNaissance = new datetime ($_dateNaissance);
         $this->_ville = $_ville;
-        $this->_compte = $_compte;
+        $this->_comptes = [];
     }
         //getter
 
@@ -35,7 +35,7 @@ class Titulaire {
         return  $this->_ville;  
     }
     public function getCompte(){
-        return  $this->_compte;  
+        return  $this->_comptes;  
     }
 
         //setter
@@ -53,7 +53,7 @@ class Titulaire {
         $this->_ville;
     }
     public function setCompte(){
-        $this->_compte;
+        $this->_comptes;
     }
 
         //function
@@ -74,15 +74,15 @@ class Titulaire {
 
                  "Age : " . $this->ageReel(). "<br>".
 
-                  "Ensemble des comptes : " .$this->_compte . "<br>";
+                  "Ensemble des comptes : " . $this->_comptes . "<br>";
         return $result;
     }
     
 }
 
 
-$tit1 = new Titulaire ("SEMPRINI" , "Anthony" , "Strasbourg" ,"1986-01-27","livret A");
-$Thi2 = new Titulaire ("LEGRAND","Pierre","Geudertheim","1995-03-02","P.E.L.");
-$tit3 = new Titulaire ("MULLER","Marie","Molsheim","2000-06-12","Compte courant");
+// $tit1 = new Titulaire ("SEMPRINI" , "Anthony" , "Strasbourg" ,"1986-01-27","livret A");
+// $Thi2 = new Titulaire ("LEGRAND","Pierre","Geudertheim","1995-03-02","P.E.L.");
+// $tit3 = new Titulaire ("MULLER","Marie","Molsheim","2000-06-12","Compte courant");
 
-echo$tit1->getInfos();
+// echo$tit1->getInfos();
