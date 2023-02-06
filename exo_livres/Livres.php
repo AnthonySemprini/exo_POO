@@ -2,34 +2,37 @@
 
 class Livres {
 
-    private string $_titre;
+    public string $titre;
     private int $_nbPage;
-    private int $_dateParution;
+    public int $dateParution;
     private float $_prix;
-    private Auteur $_auteur;
+    public Auteur $_auteur;
 
     //construct
 
-    public function __construct(string $_titre , int $_nbPage , int $_dateParution , float $_prix,Auteur $_auteur)
+    public function __construct(string $titre , int $_nbPage , int $dateParution , float $_prix,Auteur $_auteur)
     {
-        $this->_titre = $_titre;
+        $this->titre = $titre;
         $this->_nbPage = $_nbPage;
-        $this->_dateParution = $_dateParution;
+        $this->dateParution = $dateParution;
         $this->_prix = $_prix;
         $this->_auteur = $_auteur;
+
+        //a la création d'un livre, on ajoute le livre dans la bibliographie de l'auteur
+        $_auteur->bibliographie[] = $this;
     }
 
     //*!          getter 
 
 
-    public function get_titre(){
-        return $this->_titre;
+    public function gettitre(){
+        return $this->titre;
     }
     public function get_nbPage(){
         return $this->_nbPage;
     }
     public function get_dateParution(){
-        return $this->_dateParution;
+        return $this->dateParution;
     }
     public function get_prix(){
         return $this->_prix;
@@ -41,14 +44,14 @@ class Livres {
     //*!          setter
 
 
-    public function set_titre(){
-        $this->_titre;
+    public function settitre(){
+        $this->titre;
     }
     public function set_nbPage(){
         $this->_nbPage;
     }
     public function set_dateParution(){
-        $this->_dateParution;
+        $this->dateParution;
     }
     public function set_prix(){
         $this->_prix;
@@ -57,13 +60,15 @@ class Livres {
         $this->_auteur;
     }
 
+   
+
     //*!            function
 
     public function __toString()
     {
-      $result ="<br>*****Livre*****<br>" . "Le nom du livre : ". $this->_titre ."<br>".
+      $result ="<br>*****Livre*****<br>" . "Le nom du livre : ". $this->titre ."<br>".
       "Le nombre de pages : " . $this->_nbPage ."<br>".  
-      "L'année de parution : ". $this->_dateParution ."<br>".  
+      "L'année de parution : ". $this->dateParution ."<br>".  
       "Prix :". $this->_prix ."<br>". 
        "Auteur :". $this->_auteur ."<br>";
        return $result;

@@ -12,6 +12,8 @@ public function __construct(string $_nom , string $_prenom )
     {
         $this->_nom=$_nom;
         $this->_prenom=$_prenom;
+
+        // instentiation d'un tableau de libre pour un auteur, vide par défaut
         $this->bibliographie = [];
        
     }
@@ -39,15 +41,19 @@ public function __construct(string $_nom , string $_prenom )
 
     //*!           function
 
-    // function bibliographie(){
-    //     $result = "Tableau livre";
-    //     foreach ($this->
-    //     return $result;
+    // bibliographie est un tableau d'Objet de class Livres, il faut faire une boucle Foreach pour accéder a chacun des livres écrit par l'auteur et y récupérer les informations qui nous interresse
+        function afficherBibliographie(){
+        $result = "Bibliographie : <br>";
+    // on récupère dans une variable temporaire $livre, une a une, les différent objet livre de Classe Livres donc ses propriétés et méthodes sont accessible ici.
+        foreach ($this->bibliographie as $livre) {
+            $result .= $livre->titre . " parru en :" . $livre->dateParution. "<br>";
+        }
+        return $result;
     }
 
     public function __toString(){
         $result = "<br>*****Auteur*****<br>" . "Nom : ". $this->_nom . "<br>". 
-        "Prenom : " . $this->_prenom ."<br>";
+        "Prenom : " . $this->_prenom . "<br>";
         return $result;
     }
     
