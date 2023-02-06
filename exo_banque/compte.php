@@ -6,7 +6,7 @@ class Compte {
     private  float $_soldeInitial;
     private string $_devise;
     public  Titulaire $_titulaire;
-    // private float $_status;
+    
         //construct
     
     
@@ -16,7 +16,7 @@ class Compte {
         $this->_soldeInitial = $_soldeInitial;
         $this->_devise = $_devise;
         $this->_titulaire = $_titulaire;
-        $_titulaire->_comptes[] = $this;
+        $_titulaire->comptes[] = $this;
         // $this->_status = 0;
     }
 	
@@ -62,14 +62,27 @@ class Compte {
         $this->_soldeInitial -= $debiter;
         echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€<br>";
     }
-    public function virement(float $virement){
-        $this->_soldeInitial += $virement;
-        echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€<br>";
+    public function virement(float $montant, Compte $compte_to_credit){
+        echo "le compte de ". $this->_titulaire . " " . $this->_libelle." :". $this->_soldeInitial . "€ avant l'oépration de virement entre ". $this. "et " .$compte_to_credit. "<br>";
+        $this->debiter($montant);
+        $compte_to_credit->crediter($montant);
+
     }
 
+    public function getInfos()
+    {
+        $result = "<br>infos du compte<br>".
+                  "**********************<br>". 
 
+                  "Libelle : " . $this->_libelle . "<br>".
 
-    public function __toString() {
+                  "solde : ".$this->_soldeInitial." € <br>".
+
+                 "Nom du titulaire : " . $this->_titulaire. "<br>";
+        return $result;
+    }
+
+    public function __toString() { //fonction magique pour afficher
         $result = $this->_libelle . " " . $this->_soldeInitial . " " . $this->_devise. "<br>";    
         return $result;
     }

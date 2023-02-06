@@ -6,7 +6,7 @@ class Titulaire {
     private string $_prenom;
     private datetime $_dateNaissance;
     private string $_ville;
-    public array $_comptes;
+    public array $comptes;
 
 
         //__construct
@@ -18,7 +18,7 @@ class Titulaire {
         $this->_prenom = $_prenom;
         $this->_dateNaissance = new datetime ($_dateNaissance);
         $this->_ville = $_ville;
-        $this->_comptes = [];
+        $this->comptes = [];
     }
         //getter
 
@@ -35,7 +35,7 @@ class Titulaire {
         return  $this->_ville;  
     }
     public function getCompte(){
-        return  $this->_comptes;  
+        return  $this->comptes;  
     }
 
         //setter
@@ -53,12 +53,12 @@ class Titulaire {
         $this->_ville;
     }
     public function setCompte(){
-        $this->_comptes;
+        $this->comptes;
     }
 
     function afficherComptes(){
         $result = "Tableau de Comptes";
-        foreach ($this->_comptes as $compte) {
+        foreach ($this->comptes as $compte) {
             $result .= $compte;
         }
 
@@ -74,7 +74,7 @@ class Titulaire {
     }
     public function getInfos()
     {
-        $result = "infos titulaire du compte<br>".
+        $result = "<br>infos titulaire du compte<br>".
                   "**********************<br>". 
 
                   "Nom et prénom : " . $this->_nom ." ".$this->_prenom . "<br>".
@@ -85,6 +85,11 @@ class Titulaire {
 
                   "Ensemble des comptes : " . $this->afficherComptes() . "<br>";
         return $result;
+    }
+
+    public function __toString()
+    {
+        return $this->_nom . " " . $this->_prenom;
     }
     
 }
