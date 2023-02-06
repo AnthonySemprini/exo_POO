@@ -17,8 +17,5 @@ $livre4 = new Livres ("Ca" ,415,2005,19,$Auteur2);
 $livre5 = new Livres ("Simetierre" ,374,2003,22,$Auteur2);
 $livre6 = new Livres ("Harry Potter 3" ,420,2007,25,$Auteur2);
 
-echo $livre1;
-echo $Auteur1;
-
-
-echo $Auteur1->afficherBibliographie();
+echo $livre5;
+echo $livre2;

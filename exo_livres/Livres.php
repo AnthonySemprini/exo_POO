@@ -70,7 +70,7 @@ class Livres {
       "Le nombre de pages : " . $this->_nbPage ."<br>".  
       "L'année de parution : ". $this->dateParution ."<br>".  
       "Prix :". $this->_prix ."<br>". 
-       "Auteur :". $this->_auteur ."<br>";
+       $this->_auteur ."<br>";
        return $result;
     }
     
