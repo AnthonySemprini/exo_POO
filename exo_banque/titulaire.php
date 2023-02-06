@@ -63,7 +63,7 @@ class Titulaire {
         }
 
         return $result;
-    }
+
 
         //function
 

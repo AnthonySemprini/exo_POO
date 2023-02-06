@@ -7,7 +7,7 @@ class Compte {
     private string $_devise;
     public  Titulaire $_titulaire;
     
-        //construct
+        //*!    construct
     
     
     public function __construct(string $_libelle ,float $_soldeInitial , string $_devise , Titulaire $_titulaire)
@@ -20,7 +20,7 @@ class Compte {
         // $this->_status = 0;
     }
 	
-    //getter
+    //*!    getter
 
     public function getLibelle(){
         return  $this->_libelle;  
@@ -37,7 +37,7 @@ class Compte {
     // public function getStatus(){
     //     return $this->_status;
     // }
-        //setter
+        //*!     setter
 
     public function setLibelle(){
         $this->_libelle;
@@ -82,7 +82,7 @@ class Compte {
         return $result;
     }
 
-    public function __toString() { //fonction magique pour afficher
+    public function __toString() { //*!     fonction magique pour afficher
         $result = $this->_libelle . " " . $this->_soldeInitial . " " . $this->_devise. "<br>";    
         return $result;
     }
