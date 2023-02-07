@@ -4,6 +4,12 @@ spl_autoload_register(function($class_name){
     require $class_name . ".php";
 });
 
+$realisateur1 = new Realisateur("Tim","Burton","Homme","1958-08-25");
+
+$realisateur2 = new Realisateur("schumacher","Joel","Homme","1939-08-29");
+
+$realisateur3 = new Realisateur("Spielberg","Steven","Homme",1946-12-18);
+
 $film1 = new Film("Batman",1989,126,$realisateur1,"Action","Le célèbre et impitoyable justicier, Batman, est de retour. Plus beau, plus fort et plus dépoussiéré que jamais, il s'apprête à nettoyer Gotham City et à affronter le terrible Joker...");
 
 $film2 = new Film("Batman : le defi",1991,128,$realisateur1,"Action","Non seulement Batman doit affronter le Pingouin, monstre génétique doté d'une intelligence à toute épreuve, qui sème la terreur mais, plus difficile encore, il doit faire face à la séduction de deux super-femmes, la douce Selina Kyle et la féline Catwoman qui va lui donner bien du fil a retordre. Si Bruce Wayne apprécie Selina, Batman n'est pas insensible au charme de Catwoman.");
@@ -24,12 +30,9 @@ $film7 = new Film("Indiana Jones et la derniere croisade",1989,127,$realisateur3
 $film8 = new Film("Indiana Jones et le crane dee cristal",2008,123,$realisateur3,"Aventure","La nouvelle aventure d'Indiana Jones débute dans un désert du sud-ouest des Etats-Unis. Nous sommes en 1957, en pleine Guerre Froide. Indy et son copain Mac viennent tout juste d'échapper à une bande d'agents soviétiques à la recherche d'une mystérieuse relique surgie du fond des temps. De retour au Marshall College, le Professeur Jones apprend une très mauvaise nouvelle : ses récentes activités l'ont rendu suspect aux yeux du gouvernement américain. Le doyen Stanforth, qui est aussi un proche ami, se voit contraint de le licencier. A la sortie de la ville, Indiana fait la connaissance d'un jeune motard rebelle, Mutt, qui lui fait une proposition inattendue. En échange de son aide, il le mettra sur la piste du Crâne de Cristal d'Akator, relique mystérieuse qui suscite depuis des siècles autant de fascination que de craintes. Ce serait à coup sûr la plus belle trouvaille de l'histoire de l'archéologie. Indy et Mutt font route vers le Pérou, terre de mystères et de superstitions, où tant d'explorateurs ont trouvé la mort ou sombré dans la folie, à la recherche d'hypothétiques et insaisissables trésors. Mais ils réalisent très vite qu'ils ne sont pas seuls dans leur quête : les agents soviétiques sont eux aussi à la recherche du Crâne de Cristal, car il est dit que celui qui possède le Crâne et en déchiffre les énigmes s'assure du même coup le contrôle absolu de l'univers. Le chef de cette bande est la cruelle et somptueuse Irina Spalko. Indy n'aura jamais d'ennemie plus implacable... Indy et Mutt réuissiront-ils à semer leurs poursuivants, à déjouer les pièges de leurs faux amis et surtout à éviter que le Crâne de Cristal ne tombe entre les mains avides d'Irina et ses sinistres sbires ?");
 
 
-$realisateur1 = new Realisateur("Tim","Burton","Homme",1958-08-25,$filmographie);
-
-$realisateur2 = new Realisateur("schumacher","Joel","Homme",1939-08-29,$filmographie);
-
-$realisateur3 = new Realisateur("Spielberg","Steven","Homme",1946-12-18,$filmographie);
 
 $acteur1 = new Acteur("Keaton","Micheal","Homme",1951-9-05,"Batman");
 $acteur2 = new Acteur("Kilmer","Val","Homme",1959-12-31,"Batman");
 $acteur3 = new Acteur("Ford","Harrison","Homme",1942-07-13,"IndianaJones");
+
+echo $realisateur1->afficherFilmographie();

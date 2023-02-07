@@ -18,38 +18,38 @@ public function __construct(string $_nom , string $_prenom , string $_genre ,str
     $this->_role = $_role;
 }
 
-public function getNom(){
+public function get_nom(){
     return  $this->_nom;  
 } 
-public function setNom(){
+public function set_nom(){
     $this->_nom;
 }
 
-public function getGenre(){
+public function get_genre(){
     return  $this->_genre;  
 } 
-public function setGenre(){
+public function set_genre(){
     $this->_genre;
 }
 
-public function getprenom(){
+public function get_prenom(){
     return  $this->_prenom;  
 } 
-public function setprenom(){
+public function set_prenom(){
     $this->_prenom;
 }
 
-public function getAge(){
+public function get_age(){
     return  $this->_dateNaissance;  
 }
-public function setDateNaissance($newDateNaissance){
+public function set_dateNaissance($newDateNaissance){
     $this->_dateNaissance = $newDateNaissance;
 }
 
-public function getRole(){
+public function get_role(){
     return  $this->_role;  
 } 
-public function setRole(){
+public function set_role(){
     $this->_role;
 }
 
