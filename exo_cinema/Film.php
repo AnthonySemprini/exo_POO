@@ -66,7 +66,11 @@ public function set_genre(){
 public function set_resume(){
     $this->_resume;
 }
-        //*! toString
+        //*! function*********
+
+public function ajouterCasting(){
+    
+}
 
 public function __toString()
 {
