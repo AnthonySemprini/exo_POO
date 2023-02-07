@@ -38,5 +38,20 @@ $acteur1 = new Acteur("Keaton","Micheal","Homme",1951-9-05,"Batman");
 $acteur2 = new Acteur("Kilmer","Val","Homme",1959-12-31,"Batman");
 $acteur3 = new Acteur("Ford","Harrison","Homme",1942-07-13,"IndianaJones");
 
+$role1 = new Role("Batman");
+$role2 = new Role("Indiana Jones");
+
+$casting1 = new Casting($film1,$acteur1,$role1);
+$casting2 = new Casting($film2,$acteur1,$role1);
+$casting2 = new Casting($film3,$acteur2,$role1);
+$casting2 = new Casting($film4,$acteur2,$role1);
+$casting2 = new Casting($film5,$acteur3,$role2);
+$casting2 = new Casting($film6,$acteur3,$role2);
+$casting2 = new Casting($film7,$acteur3,$role2);
+$casting2 = new Casting($film8,$acteur3,$role2);
+
+
+
 echo $realisateur1->afficherFilmographie();
 echo $_genre1->afficherFilmGenre();
+echo $_acteur1;

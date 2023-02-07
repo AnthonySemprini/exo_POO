@@ -66,16 +66,16 @@ public function set_genre(){
 public function set_resume(){
     $this->_resume;
 }
-
-
-
         //*! toString
 
 public function __toString()
 {
-    $result ="<br>*****Film*****<br>"."Film : ". $this->_titre . "<br>" . "Sortie en : " . 
-    $this->_anneeSortie . "<br>" . $this->_duree . "min"
-. "Realisé par " . $this->_realisateur ."<br>". "genre : " . $this->_genre . "<br>";
+    $result ="<br>*****Film*****<br>".
+        "<br>Film : ". $this->_titre . 
+        "<br>Sortie en : " .$this->_anneeSortie . 
+        "<br>Temps : " . $this->_duree . "min". 
+        "<br>Realisé par " . $this->_realisateur .
+        "<br>". "genre : " . $this->_genre . "<br>";
     return $result;
 }
 

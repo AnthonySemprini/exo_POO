@@ -5,6 +5,8 @@ class Genre{
     private string $_genre;
     private array $_films;
     
+            //*!  construct***********
+
     public function __construct(string $_genre){
 
         $this->_genre = $_genre;
@@ -43,4 +45,11 @@ class Genre{
         }
         return $result;
     }
+
+    public function __toString()
+        {
+        $result ="<br>*****Genre*****<br>". 
+            "<br>Genre : ".$this->_genre.
+            "<br>films : ".$this->_films;   
+        }
     }

@@ -80,5 +80,14 @@ class Realisateur{
         }
         return $result;
     }
+    public function __toString()
+{
+$result ="<br>*****Realisateur*****<br>".
+    "<br>Nom : ".$this->_nom.
+    "<br>Prenom : ".$this->_prenom.
+    "<br>Genre : ".$this->_genre.
+    "<br>Age : ".$this->ageReel().
+    "<br>Filmographie : ".$this->_filmographie;   
+}
 
 }
