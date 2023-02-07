@@ -6,21 +6,22 @@ class Film{
     private int $_anneeSortie;
     private int $_duree;
     private Realisateur $_realisateur;
-    private string $_genre;
+    private Genre $_genre;
     private string $_resume;
 
         //*! __construct
 
-    public function __construct(string $_titre , string $_anneeSortie , string $_duree ,Realisateur $_realisateur , string $_genre, string $_resume ){
+    public function __construct(string $_titre , string $_anneeSortie , string $_duree ,Realisateur $_realisateur ,  $_genre, string $_resume ){
 
         
         $this->_titre = $_titre;
         $this->_anneeSortie = $_anneeSortie;
         $this->_duree = $_duree;
         $this->_realisateur = $_realisateur;
-        $this->_genre = $_genre;
-        $this->_resume = $_resume;
         $this->_realisateur->ajouterFilm($this);
+        $this->_genre = $_genre;
+        $this->_genre->ajouterFilm($this);
+        $this->_resume = $_resume;
     }
 
 

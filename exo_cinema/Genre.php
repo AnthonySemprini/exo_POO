@@ -2,49 +2,45 @@
 
 class Genre{
 
-    private string $_action;
-    private string $_aventure;
-    private string $_horreur;
-    private string $_commedie;
+    private string $_genre;
+    private array $_films;
+    
+    public function __construct(string $_genre){
 
-    public function __construct(string $_action,string $_aventure,string $_horreur,string $_commedie){
-
-        $this->_action = $_action;
-        $this->_aventure = $_aventure;
-        $this->_horreur = $_horreur;
-        $this->_commedie = $_commedie;
+        $this->_genre = $_genre;
+        $this->_films = [];
+        
     }
-
              //*! getter  *******************
 
-             public function get_action(){
-                return  $this->_action;  
-            } 
-            public function get_aventure(){
-                return  $this->_aventure;  
-            } 
-            public function get_horreur(){
-                return  $this->_horreur;  
-            } 
-            public function get_commedie(){
-                return  $this->_commedie;  
-            }
+    public function get_genre(){
+        return  $this->_genre;  
+    } 
+    public function get_films(){
+        return  $this->_films;  
+    }          
+    //*!  setter  ******************
             
-                    //*!  setter  ******************
-            
-            public function set_action(){
-                $this->_action;
-            }
-            public function set_aventure(){
-                $this->_aventure;
-            }
-            public function set_horreur(){
-                $this->_horreur;
-            }
-            
-            public function set_commedie(){
-                $this->_commedie;
-            }
+    public function set_genre(){
+        $this->_genre;
+    }
+    public function set_films(){
+        $this->_films;
+    }
+           
 
-                   //*!  function  ************************
-}
+    //*!  function  ************************
+
+
+    public function ajouterFilm(Film $film){
+        $this->_films[] = $film;
+    }
+
+    function afficherFilmGenre(){
+        $result = "<br>*****film de genre *****<br>";
+        foreach ($this->_films as $film){
+            $result .="<strong>".$film->get_titre()."</strong>" . " Date  sortie  " . $film->get_anneeSortie() . "<br>"; 
+        }
+        return $result;
+    }
+    }
