@@ -2,11 +2,11 @@
 
 class Livre {
 
-    public string $titre;
+    private string $titre;
     private int $_nbPage;
-    public int $dateParution;
+    private int $dateParution;
     private float $_prix;
-    public Auteur $_auteur;
+    private Auteur $_auteur;
 
     //construct
 
@@ -19,7 +19,7 @@ class Livre {
         $this->_auteur = $_auteur;
 
         //a la création d'un livre, on ajoute le livre dans la bibliographie de l'auteur
-        $_auteur->bibliographie[] = $this;
+        $this->_auteur->ajouterLivre($this);
     }
 
     //*!          getter 

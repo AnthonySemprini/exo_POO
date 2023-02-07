@@ -4,7 +4,7 @@ class Auteur {
 
     private string $_nom;
     private string $_prenom;
-    public array $bibliographie;
+    private array $bibliographie;
    
 
 
@@ -41,12 +41,19 @@ public function __construct(string $_nom , string $_prenom )
 
     //*!           function
 
+        
+        
+    public function ajouterLivre(Livre $livre){
+            $this->bibliographie[] = $livre;
+            }
+
+
     // bibliographie est un tableau d'Objet de class Livres, il faut faire une boucle Foreach pour accéder a chacun des livres écrit par l'auteur et y récupérer les informations qui nous interresse
         function afficherBibliographie(){
         $result = "Bibliographie : <br>";
     // on récupère dans une variable temporaire $livre, une a une, les différent objet livre de Classe Livres donc ses propriétés et méthodes sont accessible ici.
         foreach ($this->bibliographie as $livre) {
-            $result .= $livre->titre . " parru en :" . $livre->dateParution. "<br>";
+            $result .= $livre->gettitre() . " parru en :" . $livre->get_dateParution(). "<br>";
         }
         return $result;
     }
