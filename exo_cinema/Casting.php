@@ -5,7 +5,6 @@ class Casting{
     private Film $_film;
     private Acteur $_acteur;
     private Role $_role;
-    private array $_casting;
 
         //*!   construct************
 
@@ -14,8 +13,9 @@ class Casting{
         $this->_film = $_film;
         $this->_acteur = $_acteur;
         $this->_role = $_role;
-        $this->_casting = [];
-        $this->_film->ajouterCasting($this);$this->_acteur->ajouterCasting($this);$this->_role->ajouterCasting($this);
+        $this->_film->ajouterCasting($this);
+        $this->_acteur->ajouterCasting($this);
+        $this->_role->ajouterCasting($this);
     }
 
         //*!    getter****************
@@ -42,13 +42,4 @@ class Casting{
         $this->_role;
     }
 
-    //*!    function*********************
-
-    public function __toString()
-    {
-    $result ="<br>*****Realisateur*****<br>". 
-        "<br>Film : ".$this->_film.
-        "<br>Acteur : ".$this->_acteur.
-        "<br>Role : ".$this->_role;   
-    }
 }

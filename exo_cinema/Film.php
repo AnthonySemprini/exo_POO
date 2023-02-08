@@ -8,6 +8,7 @@ class Film{
     private Realisateur $_realisateur;
     private Genre $_genre;
     private string $_resume;
+    private array $_casting;
 
         //*! __construct
 
@@ -22,6 +23,7 @@ class Film{
         $this->_genre = $_genre;
         $this->_genre->ajouterFilm($this);
         $this->_resume = $_resume;
+        $this->_casting = [];
     }
 
 
@@ -68,11 +70,22 @@ public function set_resume(){
 }
         //*! function*********
 
-public function ajouterCasting(){
-    
+public function ajouterCasting(Casting $casting){
+    $this->_casting[] = $casting;
 }
 
+public function afficherCasting() {
+    echo "<h2>Le casting de $this est : </h2>";
+    foreach($this->_casting as $casting) {
+        echo $casting->get_acteur()." a joué le rôle de ".$casting->get_role()."<br>";
+    }
+}
+ 
 public function __toString()
+{
+    return $this->_titre;
+}
+public function getInfos()
 {
     $result ="<br>*****Film*****<br>".
         "<br>Film : ". $this->_titre . 

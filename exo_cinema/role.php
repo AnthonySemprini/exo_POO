@@ -2,47 +2,41 @@
 
 class Role{
 
-    private Acteur $_acteur;
-    private array $_roles;
+    private string $_role;
+    private array $_casting; 
 
         //*! construct**************
 
-    public function __construct(Acteur $_acteur)
-    {
-        $this->_acteur = $_acteur;
-        $this->_roles = [];
-    }
+    public function __construct(string $_role)
+        {
+        $this->_role = $_role;
+        $this->_casting = [];
+        }
 
         //*!     getter****************
-
-        public function get_acteur(){
-            return  $this->_acteur;  
-        } 
-        public function get_roles(){
-            return  $this->_roles;  
+        public function get_role(){
+            return  $this->_role;  
         }          
-        //*!  setter  ******************
-                
-        public function set_acteur(){
-            $this->_acteur;
-        }
-        public function set_roles(){
-            $this->_roles;
+    
+        public function set_role($role){
+            $this->_role = $role;
         } 
         
         //*!        function***************
 
-        public function __toString()
-        {
-        $result ="<br>*****Role*****<br>". 
-            "<br>Acteur : ".$this->_acteur.
-            "<br>Role : ".$this->_roles;   
-        }
 
-        function public afficherRoleActeur(){
-            $result = "<br>role et acteur<br>";
-            foreach ($this->_roles as $role){
-                $result
+        public function ajouterCasting(Casting $casting){
+            $this->_casting[] = $casting;
+        }
+        
+        public function afficherCasting() {
+            foreach($this->_casting as $casting) {
+                echo "<strong>". $casting->get_acteur()."</strong>"." joue dans  ".$casting->get_film()."<br>";
             }
         }
+    public function __toString()
+    {
+      return $this->_role;
+    }
+
 }
