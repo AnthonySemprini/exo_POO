@@ -5,7 +5,7 @@ class Compte {
     private string $_libelle;
     private  float $_soldeInitial;
     private string $_devise;
-    public  Titulaire $_titulaire;
+    private  Titulaire $_titulaire;
     
         //*!    construct
     
@@ -16,7 +16,7 @@ class Compte {
         $this->_soldeInitial = $_soldeInitial;
         $this->_devise = $_devise;
         $this->_titulaire = $_titulaire;
-        $_titulaire->comptes[] = $this;
+        $this->_titulaire->ajouterCompte($this);
         // $this->_status = 0;
     }
 	

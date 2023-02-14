@@ -1,12 +1,12 @@
 <?php
 
-class Titulaire {
+class Titulaire{
 
     private string $_nom;
     private string $_prenom;
     private datetime $_dateNaissance;
     private string $_ville;
-    public array $comptes;
+    private array $comptes;
 
 
         //__construct
@@ -59,11 +59,13 @@ class Titulaire {
     function afficherComptes(){
         $result = "Tableau de Comptes";
         foreach ($this->comptes as $compte) {
-            $result .= $compte;
+            $result .= $compte;//Le "."est le symbole de la concatenation
+            //a chaque tour de lma boucle tu es obligé d'ajouter des choses au précedent résultat. Si tu enleves le point pour ne garder que le = ca ecrase l'ancienne valeur Et donc tu ne gardes que le dernier compte(c'est d'ailleurs ce qu'il se passe si tu essayes d'enlever le point)
         }
-
         return $result;
+    }
 
+    public function ajouterCompte(Compte $compte) { $this->comptes[] = $compte;}
 
         //function
 
@@ -92,7 +94,8 @@ class Titulaire {
         return $this->_nom . " " . $this->_prenom;
     }
     
-}
+    }
+
 
 
 // $tit1 = new Titulaire ("SEMPRINI" , "Anthony" , "Strasbourg" ,"1986-01-27","livret A");
